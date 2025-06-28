@@ -1,5 +1,6 @@
 // src/components/Sidebar.jsx (or Sidebar.tsx)
 import React from 'react';
+import img1 from '../images/devel.jpg'
 import {
   FaGithub,
   FaLinkedin,
@@ -30,18 +31,20 @@ const Sidebar = ({ isOpen }) => {
     <>
 
       {/* <p className=' md:block hidden text-[20px] cursor-pointer border w-max  z-50 fixed text-[white] mt-5 left-[200px] '><VscLayoutSidebarLeftOff /></p> */}
-      <aside className={`${isOpen? '': ''} fixed w-64  min-h-full bg-[#171717] text-gray-200 p-6  shadow-lg "`}>
+      <aside className={`${isOpen? '': ''} fixed w-64     min-h-full bg-[#171717] text-gray-200 p-6  shadow-lg "`}>
 
         
         <div>
           {/* Profile Section */}
-          <div className="flex flex-col items-center mb-8">
+          <div className="flex flex-col mt-20 items-center mb-8">
             {/* Logo/Avatar - You can replace this with your own image */}
             <div className="w-24 h-24 rounded-full bg-gray-600 dark:bg-gray-700 flex items-center justify-center text-3xl font-bold text-white mb-4">
-              DEV.A
+              {/* DEV.A */}
+
+              <img className='rounded-full' src={img1} alt="" />
             </div>
             <h2 className="text-xl font-semibold text-white">Ahmad Shafique</h2>
-            <p className="text-sm text-gray-400">Full-Stack Engineer</p>
+            <p className="text-sm text-gray-400">Mern Stack Engineer</p>
             <p className="text-center text-sm text-gray-400 mt-4">
               Building elegant solutions to complex problems
             </p>
