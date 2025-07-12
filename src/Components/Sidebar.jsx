@@ -15,6 +15,7 @@ import {
   FaSun,
 } from 'react-icons/fa';
 import { VscLayoutSidebarLeftOff } from 'react-icons/vsc';
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({ isOpen }) => {
 
@@ -89,12 +90,12 @@ const Sidebar = ({ isOpen }) => {
 
               {/* Email */}
               <div className="relative group">
-                <a
+                <Link
                   href="mailto:ahmadshafiq6992@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   <FaEnvelope size={20} />
-                </a>
+                </Link>
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition duration-300">
                   <div className="relative bg-[white] text-[black] text-xs px-2 py-1 rounded shadow-lg">
                     Email
@@ -109,14 +110,14 @@ const Sidebar = ({ isOpen }) => {
           {/* Navigation Menu */}
           <nav className="space-3">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="flex items-center px-1 py-1 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"
               >
                 <span className="mr-3">{item.icon}</span>
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
