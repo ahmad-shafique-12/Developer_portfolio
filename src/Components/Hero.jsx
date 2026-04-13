@@ -40,11 +40,23 @@ const Hero = () => {
       </button>
 
       {/* Layout */}
-      <div className="flex h-auto bg-white dark:bg-[#121212] text-black dark:text-white">
+      <div className="flex h-auto bg-white dark:bg-[#121212] text-black dark:text-white relative">
+        {/* Mobile overlay */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 z-30 bg-black/50 md:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
         {/* Sidebar */}
         {isSidebarOpen && (
           <div className="fixed md:relative top-0 left-0 w-64 h-screen z-40 bg-gray-800 dark:bg-gray-900">
-            <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+            <Sidebar
+              toggleDarkMode={toggleDarkMode}
+              darkMode={darkMode}
+              closeSidebar={() => setIsSidebarOpen(false)}
+            />
           </div>
         )}
 

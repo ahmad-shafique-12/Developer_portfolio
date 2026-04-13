@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import img1 from '../images/image.png'
 import img2 from '../images/grabit.PNG'
 import img3 from '../images/zomo.PNG'
-
+import img4 from '../images/hurak.image.png'
 
 // Main Projects component
 export default function ProjectData({isSidebarOpen}) {
@@ -36,7 +36,15 @@ export default function ProjectData({isSidebarOpen}) {
       imageUrl: img3 ,
       liveDemoUrl: 'https://zomo-app.vercel.app/', // Placeholder URL
     },
-    
+     {
+      id: 3,
+      title: 'Hurak.com',
+      category: 'Web',
+      description: 'Hurak E-Learning Platform – A modern Udemy-like online learning website built with Next.js and Tailwind CSS for a smooth, responsive course browsing and learning experience.',
+      technologies: ['Next.js', 'Tailwind CSS', 'Context API', 'shadcn'],
+      imageUrl: img4 ,
+      liveDemoUrl: 'https://hurak.com/', // Placeholder URL
+    },
   ];
 
   // Filtered projects based on activeFilter state
@@ -50,17 +58,17 @@ export default function ProjectData({isSidebarOpen}) {
   return (
     <div className={` ${isSidebarOpen? 'w-[%]': 'w-full'} min-h-screen bg-[#0A0A0A] text-white p-4 sm:p-8 flex flex-col items-center font-inter`}>
       <div className="w-full max-w-6xl">
-        <h1 className="text-4xl font-bold mb-12 text-gray-100 ">My Projects</h1>
+        <h1 className="text-4xl font-bold mb-5 text-gray-100 ">My Projects</h1>
 
-        <p className="text-xl text-[#A1A1A1] mb-10">A collection of my recent work in web development</p>
+        <p className="text-xl text-[#A1A1A1] mb-5">A collection of my recent work in web development</p>
 
         {/* Filter Buttons */}
-          <div className="flex flex-wrap w-max gap-3 mb-8 justify-center p-2 bg-[#262626] rounded-lg shadow-inner border border-gray-700">
+          <div className="flex flex-wrap w-max  gap-3 mb-5 justify-center p-2 bg-[#262626] rounded-lg shadow-inner border border-gray-700">
           {['All', 'Web', ].map(filter => (
             <button
               key={filter}
               className={`
-                px-6 py-2 rounded-lg text-lg font-medium transition-all duration-200 ease-in-out
+                px-4 py- rounded-lg text-lg font-medium transition-all duration-200 ease-in-out
                 flex items-center justify-center
                 ${activeFilter === filter
                   ? 'bg-[#0A0A0A] text-white shadow-lg border-b-2 border-blue-500' // Added border-b for underline

@@ -1,7 +1,7 @@
     import React, { useState } from 'react';
     import img1 from '../images/imgi_7_WD.png'
     import img2 from '../images/imgi_6_letskill.png'
-
+import img3 from '../images/hurak.webp'
 
     // Main Experience component
     export default function ExperienceData() {
@@ -10,9 +10,9 @@
     const experiences = [
         {
         id: 1,
-        title: 'Fontend Developement',
+        title: 'Fontend Developement Internship',
         company: 'web Devrs',
-        date: ' 2024 - dec-2024',
+        date: ' Sep 2024 - Apr 2025',
         description: 'Assisted in building modern web interfaces with React.',
         skillsUsed: ['Html', 'Css', ],
         icon: (
@@ -26,9 +26,9 @@
         },
         {
         id: 2,
-        title: 'Mern Stack| BootCamp',
+        title: 'Mern Stack Developer',
         company: 'LetSkill',
-        date: 'Dec 2024 - mar 2025',
+        date: 'Apr 2025 - Nov 2025',
         description: 'Worked on MERN-based web apps and gained hands-on experience.',
         skillsUsed: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
         icon: (
@@ -36,23 +36,23 @@
             <path d="M15 15h.01"/><path d="M12 19c-2.2 0-4-1.8-4-4 0-.7.3-1.4.8-2l1.6-3.2C10.7 8.3 11 7.7 11 7c0-1.7-1.3-3-3-3S5 5.3 5 7c0 .7.3 1.4.8 2L7.4 12c.5.9.8 1.5.8 2 0 2.2-1.8 4-4 4H2"/><path d="M17 12V5h-2.5a2.5 2.5 0 0 1-5 0V7.5"/><path d="M21 21v-7h-5v7h5z"/><path d="M18 10V5.5L16.5 4l-1.5 1.5V10"/>
             </svg>
         ), // Example icon for web developer
-        companyLogo: img2 // Dummy image URL
+        companyLogo: img2 
         },
-        // {
-        //   id: 3,
-        //   title: 'Frontend Developer Intern',
-        //   company: 'Tech Solutions Inc.',
-        //   date: 'Jan 2023 - May 2023',
-        //   description: 'Assisted in the development of user interfaces for web applications, contributing to component design and front-end logic.',
-        //   skillsUsed: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
-        //   icon: (
-        //     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code w-8 h-8 text-orange-400">
-        //       <polyline points="16 18 22 12 16 6" />
-        //       <polyline points="8 6 2 12 8 18" />
-        //     </svg>
-        //   ), // Example icon for internship
-        //   companyLogo: 'https://placehold.co/60x60/334155/E2E8F0?text=TS' // Dummy image URL
-        // }
+        {
+          id: 3,
+          title: 'Frontend Developer ',
+          company: 'Hurak Technologies .',
+          date: 'Nov 2025 - 19mar',
+          description:'Assisted in developing responsive, user-friendly web interfaces using modern frontend technologies. Collaborated with the team to build reusable components, integrate APIs, and improve overall user experience and performance',
+          skillsUsed: ['HTML5', 'CSS3', 'JavaScript', 'Next.js', 'Tailwind css', 'laravel', 'shadcn'],
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code w-8 h-8 text-orange-400">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          ), // Example icon for internship
+          companyLogo: img3 // Dummy image URL
+        }
     ];
 
     // Function to toggle the expanded state of an experience item
@@ -113,7 +113,7 @@
                         <img
                             src={exp.companyLogo}
                             alt={`${exp.company} logo`}
-                            className="rounded-lg w-16 h-16 object-cover"
+                            className="rounded-lg w-16 h-16 object-fill"
                             onError={(e) => {
                             e.target.onerror = null; // Prevent infinite loop
                             e.target.src = `https://placehold.co/60x60/334155/E2E8F0?text=Logo`; // Fallback image

@@ -1,6 +1,7 @@
 // src/components/Sidebar.jsx (or Sidebar.tsx)
 import React from 'react';
 import img1 from '../images/devel.jpg'
+import img2 from '../images/Ahmad.jpg'
 import {
   FaGithub,
   FaLinkedin,
@@ -15,9 +16,9 @@ import {
   FaSun,
 } from 'react-icons/fa';
 import { VscLayoutSidebarLeftOff } from 'react-icons/vsc';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, closeSidebar }) => {
 
   const navItems = [
     { name: 'Home', icon: <FaHome />, href: '/' },
@@ -37,12 +38,12 @@ const Sidebar = ({ isOpen }) => {
         
         <div>
           {/* Profile Section */}
-          <div className="flex flex-col mt-20 items-center mb-8">
+          <div className="flex flex-col mt-15 items-center mb-5">
             {/* Logo/Avatar - You can replace this with your own image */}
-            <div className="w-24 h-24 rounded-full bg-gray-600 dark:bg-gray-700 flex items-center justify-center text-3xl font-bold text-white mb-4">
+            <div className="w-24 h-24 rounded-full   overflow-hidden  bg-gray-600 dark:bg-gray-700 flex items-center justify-center text-3xl font-bold text-white mb-4">
               {/* DEV.A */}
 
-              <img className='rounded-full' src={img1} alt="" />
+              <img className='rounded-full transform translate-y-[10%] ' src={img2} alt="" />
             </div>
             <h2 className="text-xl font-semibold text-white">Ahmad Shafique</h2>
             <p className="text-sm text-gray-400">Mern Stack Engineer</p>
@@ -90,12 +91,12 @@ const Sidebar = ({ isOpen }) => {
 
               {/* Email */}
               <div className="relative group">
-                <Link
+                <a
                   href="mailto:ahmadshafiq6992@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   <FaEnvelope size={20} />
-                </Link>
+                </a>
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition duration-300">
                   <div className="relative bg-[white] text-[black] text-xs px-2 py-1 rounded shadow-lg">
                     Email
@@ -108,16 +109,26 @@ const Sidebar = ({ isOpen }) => {
           </div>
 
           {/* Navigation Menu */}
-          <nav className="space-3">
+          <nav className="space-y-0.5">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.name}
                 to={item.href}
-                className="flex items-center px-1 py-1 rounded-md text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"
+                end={item.href === '/'}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.innerWidth < 768 && closeSidebar) {
+                    closeSidebar();
+                  }
+                }}
+                className={({ isActive }) =>
+                  `flex items-center px-1 py-1 rounded-md transition-colors duration-200 ${
+                    isActive ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`
+                }
               >
                 <span className="mr-3">{item.icon}</span>
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>

@@ -6,6 +6,7 @@ import img4 from '../images/depl.png';
 import img5 from '../images/full.png';
 import { CiGlobe, CiMobile2, CiServer, } from "react-icons/ci";
 import { FaLaptopCode } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const About = ({ isSidebarOpen }) => {
   const mobileTags = ['React Native', 'iOS', 'Android'];
@@ -137,7 +138,9 @@ const About = ({ isSidebarOpen }) => {
                 <p className="text-[#A1A1A1] mb-4">
                   Bridging the gap between frontend and backend to create complete, end-to-end solutions.
                 </p>
-                <button className="bg-[white] text-[black] px-5 py-1 cursor-pointer m-auto block mt-10 rounded-[10px]">View Project</button>
+                <Link to="/projects">
+                  <button className="bg-[white] text-[black] px-5 py-1 cursor-pointer m-auto block mt-10 rounded-[10px]">View Project</button>
+                </Link>
               </div>
               {/* Image: shrinks to not grow/shrink, centers itself */}
               <img src={img5} alt="Backend Development" className="w-[250px] transition-all duration-500 group-hover:bg-[#301D38] self-center flex-shrink-0 rounded-2xl" />

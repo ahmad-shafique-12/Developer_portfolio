@@ -2,6 +2,7 @@ import React from 'react'
 import AnimatedPhrase from './AnimatedPhrase'
 import Explorer from './Expolorer'
 import Sidebar from './Sidebar'
+import { Link } from 'react-router-dom'
 
 const FileExporlor = ({ isSidebarOpen }) => {
   // const words = ['Crafting', 'Scalable', 'Code,', 'Building', 'Seamless', 'Experiences.']
@@ -13,13 +14,13 @@ const FileExporlor = ({ isSidebarOpen }) => {
         <div className=''>
           <AnimatedPhrase  phrase="Crafting Scalable Code, Building Seamless Experiences." />
 
-          <p className='text-[18px] font-[500] text-[#999375] leading-7 mt-6'>Turning ideas into interactive, efficient, and future-ready digital solutions <br/>with clean code and innovative design.</p>
+          <p className='text-[18px] font-[500] text-[#999375] leading-7 mt-6'>Turning ideas into interactive, efficient, and future-ready digital solutions <br/> with clean code, modern design, and a seamless user experience.</p>
 
         </div>
 
         <div className="sm:flex w-max items-center sm:order-none   text-center mt-5 text-white space-x-4 rounded-lg shadow-2xs">
       {/* View My Work Button */}
-      <button className="flex items-center space-x-2 px-6 py-2 cursor-pointer bg-white text-gray-900 rounded-xl shadow-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
+      <Link to="/projects" className="flex items-center space-x-2 px-6 py-2 bg-white text-gray-900 rounded-xl shadow-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
         <span>View My Work</span>
         {/* Right Arrow SVG Icon */}
         <svg
@@ -32,8 +33,8 @@ const FileExporlor = ({ isSidebarOpen }) => {
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
-      </button>
-
+      </Link>
+ <Link to="/AhmadShafique Cv.pdf">
       {/* Resume Button */}
       <button className="flex items-center space-x-2 px-6  py-2 cursor-pointer bg-gray-800 text-white rounded-xl shadow-md hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105">
         {/* Download Icon (simple SVG) */}
@@ -47,13 +48,16 @@ const FileExporlor = ({ isSidebarOpen }) => {
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
+       
+          {/* <span>Resume</span> */}
         <span>Resume</span>
       </button>
+        </Link>
 
       {/* GitHub Icon */}
       <div className='flex'>
 
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 text-white hover:text-gray-400 transition duration-300 ease-in-out transform hover:scale-110">
+        <a href="https://github.com/ahmad-shafique-12" target="_blank" rel="noopener noreferrer" className="p-3 text-white hover:text-gray-400 transition duration-300 ease-in-out transform hover:scale-110">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -72,7 +76,7 @@ const FileExporlor = ({ isSidebarOpen }) => {
       </a>
 
       {/* LinkedIn Icon */}
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 text-white hover:text-gray-400 transition duration-300 ease-in-out transform hover:scale-110">
+      <a href="https://www.linkedin.com/in/ahmad-shafique-mern/" target="_blank" rel="noopener noreferrer" className="p-3 text-white hover:text-gray-400 transition duration-300 ease-in-out transform hover:scale-110">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
